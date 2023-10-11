@@ -1,5 +1,5 @@
 import { redirect } from "@remix-run/node";
-import { pb } from "~/database";
+import { pb } from "~/db.server";
 import { getSession, sessionStorage } from "~/session.server";
 import type { ActionFunction } from "@remix-run/node";
 

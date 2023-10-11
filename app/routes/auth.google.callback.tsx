@@ -1,5 +1,5 @@
 import { getSession, sessionStorage } from "~/session.server";
-import { pb } from "~/database";
+import { pb } from "~/db.server";
 import {
   redirect,
   type LoaderFunction,

@@ -1,4 +1,4 @@
-import { pb } from "~/database";
+import { pb } from "~/db.server";
 import { getSession, sessionStorage } from "~/session.server";
 import { useFetcher } from "@remix-run/react";
 import type { MetaFunction, ActionFunction } from "@remix-run/node";
