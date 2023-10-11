@@ -1,9 +1,10 @@
-import { pb } from "~/db.server";
+import { database } from "~/db.server";
 import { getSession, sessionStorage } from "~/session.server";
 import { useFetcher } from "@remix-run/react";
 import type { MetaFunction, ActionFunction } from "@remix-run/node";
 
 export const action: ActionFunction = async ({ request }) => {
+  const pb = database();
   const authMethods = await pb.collection("users").listAuthMethods();
 
   const url = new URL(request.url);

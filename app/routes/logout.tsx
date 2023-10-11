@@ -1,9 +1,10 @@
 import { redirect } from "@remix-run/node";
-import { pb } from "~/db.server";
+import { database } from "~/db.server";
 import { getSession, sessionStorage } from "~/session.server";
 import type { ActionFunction } from "@remix-run/node";
 
 export const action: ActionFunction = async ({ request }) => {
+  const pb = database();
   const session = await getSession(request);
 
   pb.authStore.clear();

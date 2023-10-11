@@ -1,5 +1,5 @@
 import { getSession, sessionStorage } from "~/session.server";
-import { pb } from "~/db.server";
+import { database } from "~/db.server";
 import {
   redirect,
   type LoaderFunction,
@@ -14,6 +14,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
+  const pb = database();
   const url = new URL(request.url);
   const redirectURL = `${url.origin}/auth/google/callback`;
   const session = await getSession(request);
